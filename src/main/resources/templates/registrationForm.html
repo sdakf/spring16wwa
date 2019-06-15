@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja</title>
+</head>
+<body>
+<form action="/registration" method="post" th:object="${userDTO}">
+    <input type="text" th:field="*{firstName}"> <!--gwiazka odnosi sie do obiektu okreslonego przez th:object-->
+    <input type="text" th:field="*{lastName}">
+    <input type="text" th:field="*{birthDate}">
+    <input type="text" th:field="*{pesel}">
+    <input type="text" th:field="*{username}">
+    <input type="text" th:field="*{password}">
+    <input type="text" th:field="*{phone}">
+    <input type="text" th:field="*{zipCode}">
+    <input type="text" th:field="*{city}">
+    <input type="text" th:field="*{street}">
+    <select th:field="*{countries}">
+        <option value="" th:text="wybierz"></option>
+        <option th:each="country : ${countries}"
+                th:text="${country.plName}"
+                th:value="${country}"></option>
+    </select>
+</form>
+</body>
+</html>
