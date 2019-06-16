@@ -10,6 +10,9 @@ public class UserRegistrationController {
 
     @Autowired
     UserRegistrationService userRegistrationService;
+    @Autowired
+    UserRepository userRepository;
+
 
 //    @RequestMapping(value = "/registration",method = RequestMethod.GET)
     @GetMapping(value = "/registration")
@@ -19,9 +22,17 @@ public class UserRegistrationController {
         return "registrationForm"; //nazwa htmla
     }
     @PostMapping(value = "/registration")
-    public String register(@ModelAttribute(name = "userDTO") UserRegistrationDTO DTO){
+    public String register(@ModelAttribute(name = "userDTO") UserRegistrationDTO DTO, Model model){
         userRegistrationService.registerUser(DTO);
-        return "/";
+//        model.addAttribute("usersList", userRepository.findAll()); //fixme -> encja na dto
+        return "redirect:/";
     }
+
+    @RequestMapping("/")
+    public String home(Model model) {
+        model.addAttribute("usersList", userRepository.findAll()); //fixme -> encja na dto
+        return "index";
+    }
+
 
 }

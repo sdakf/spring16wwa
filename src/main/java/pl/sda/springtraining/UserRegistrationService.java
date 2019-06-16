@@ -8,6 +8,8 @@ public class UserRegistrationService {
 
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    UserAddressRepository userAddressRepository;
 
     public void registerUser(UserRegistrationDTO dto) {
 
@@ -29,7 +31,9 @@ public class UserRegistrationService {
         userAddress.setZipCode(dto.getZipCode());
         user.setUserAddress(userAddress);
 
+        userAddressRepository.save(userAddress);
         userRepository.save(user);
+
 
     }
 }
