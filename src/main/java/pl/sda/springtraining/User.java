@@ -1,11 +1,14 @@
 package pl.sda.springtraining;
 
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
+@Setter
 public class User {
 
     @Id
@@ -16,10 +19,11 @@ public class User {
     private String birthDate;
     private String pesel;
     private String username;
-    private String password;
+    private String passwordHash;
     private String phone;
 
     @OneToOne
     private UserAddress userAddress;
+
 
 }
