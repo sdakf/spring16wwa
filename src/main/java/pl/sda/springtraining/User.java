@@ -11,11 +11,8 @@ import javax.persistence.OneToOne;
 @Entity
 @Setter
 @Getter
-public class User {
+public class User extends BaseEntity{
 
-    @Id
-    @GeneratedValue
-    private Integer id;
     private String firstName;
     private String lastName;
     private String birthDate;

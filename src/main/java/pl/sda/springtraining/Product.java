@@ -11,11 +11,7 @@ import java.math.BigDecimal;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
-
-    @Id
-    @GeneratedValue
-    private Integer id;
+public class Product extends BaseEntity{
 
     private String productName;
     private Long stockAmount;
