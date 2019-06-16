@@ -29,6 +29,6 @@ public class AdminProductController {
             @RequestParam BigDecimal price,
             @RequestParam ProductType productType) {
         productService.addProduct(productName, stockAmount, url, price, productType);
-        return "";
+        return "redirect:/products";
     }
 }

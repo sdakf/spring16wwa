@@ -1,9 +1,6 @@
 package pl.sda.springtraining;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -13,6 +10,7 @@ import java.math.BigDecimal;
 @Setter
 @Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class Product {
 
     @Id

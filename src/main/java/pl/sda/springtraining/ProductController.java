@@ -13,7 +13,7 @@ public class ProductController {
 
     @RequestMapping("/products")
     public String productList(Model model) {
-        model.addAttribute("productList", productRepository.findAll());
-        return "productsList";
+        model.addAttribute("productsList", productRepository.findAll());
+        return "productsView";
     }
 }
