@@ -16,7 +16,7 @@
     <input type="text" th:field="*{zipCode}">
     <input type="text" th:field="*{city}">
     <input type="text" th:field="*{street}">
-    <select th:field="*{countries}">
+    <select th:field="*{country}">
         <option value="" th:text="wybierz"></option>
         <option th:each="country : ${countries}"
                 th:text="${country.plName}"

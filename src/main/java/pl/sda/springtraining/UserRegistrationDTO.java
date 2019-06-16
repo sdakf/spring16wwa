@@ -16,7 +16,7 @@ public class UserRegistrationDTO {
     private String zipCode;
     private String city;
     private String street;
-    private Countries countries;
+    private Countries country;
 
     public String getSomething(){
         return "";
